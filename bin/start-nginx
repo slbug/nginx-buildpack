@@ -6,6 +6,7 @@ mkfifo $psmgr
 
 #Evaluate config to get $PORT
 echo 'erb start'
+echo $(erb config/nginx.conf.erb)
 echo $(erb config/nginx.conf.erb > config/nginx.conf)
 echo 'erb end'
 
