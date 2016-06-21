@@ -5,7 +5,9 @@ rm -f $psmgr
 mkfifo $psmgr
 
 #Evaluate config to get $PORT
-erb config/nginx.conf.erb > config/nginx.conf
+echo 'erb start'
+echo $(erb config/nginx.conf.erb > config/nginx.conf)
+echo 'erb end'
 
 n=1
 while getopts :f option ${@:1:2}
